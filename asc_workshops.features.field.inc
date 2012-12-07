@@ -135,7 +135,7 @@ function asc_workshops_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'hidden',
+          'label' => 'inline',
           'module' => 'entityreference',
           'settings' => array(
             'link' => 1,
@@ -167,14 +167,14 @@ function asc_workshops_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-asc_workshop-field_asc_workshop_worksho_title'.
-  $fields['node-asc_workshop-field_asc_workshop_worksho_title'] = array(
+  // Exported field: 'node-asc_workshop-field_asc_workshop_workshop_title'.
+  $fields['node-asc_workshop-field_asc_workshop_workshop_title'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_asc_workshop_worksho_title',
+      'field_name' => 'field_asc_workshop_workshop_title',
       'foreign keys' => array(
         'format' => array(
           'columns' => array(
@@ -200,7 +200,7 @@ function asc_workshops_field_default_fields() {
       'bundle' => 'asc_workshop',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Workshop title; do not include course name. ',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -217,7 +217,7 @@ function asc_workshops_field_default_fields() {
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_asc_workshop_worksho_title',
+      'field_name' => 'field_asc_workshop_workshop_title',
       'label' => 'Workshop Title',
       'required' => 1,
       'settings' => array(
@@ -236,14 +236,14 @@ function asc_workshops_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-asc_workshop-field_attachments'.
-  $fields['node-asc_workshop-field_attachments'] = array(
+  // Exported field: 'node-asc_workshop-field_asc_workshops_handouts'.
+  $fields['node-asc_workshop-field_asc_workshops_handouts'] = array(
     'field_config' => array(
       'active' => '1',
-      'cardinality' => '1',
+      'cardinality' => '-1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_attachments',
+      'field_name' => 'field_asc_workshops_handouts',
       'foreign keys' => array(
         'fid' => array(
           'columns' => array(
@@ -277,7 +277,7 @@ function asc_workshops_field_default_fields() {
           'module' => 'file',
           'settings' => array(),
           'type' => 'file_default',
-          'weight' => '7',
+          'weight' => 9,
         ),
         'teaser' => array(
           'label' => 'above',
@@ -287,38 +287,24 @@ function asc_workshops_field_default_fields() {
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_attachments',
-      'label' => 'Attachments',
+      'field_name' => 'field_asc_workshops_handouts',
+      'label' => 'Handouts',
       'required' => 0,
       'settings' => array(
-        'description_field' => 0,
+        'description_field' => 1,
         'file_directory' => '',
-        'file_extensions' => 'pdf',
+        'file_extensions' => 'txt',
         'max_filesize' => '',
         'user_register_form' => FALSE,
       ),
       'widget' => array(
         'active' => 1,
-        'module' => 'media',
+        'module' => 'file',
         'settings' => array(
-          'allowed_schemes' => array(
-            'public' => 'public',
-          ),
-          'allowed_types' => array(
-            'audio' => 0,
-            'default' => 0,
-            'image' => 'image',
-            'video' => 0,
-          ),
-          'browser_plugins' => array(
-            'media_default--media_browser_1' => 'media_default--media_browser_1',
-            'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
-            'upload' => 'upload',
-          ),
           'progress_indicator' => 'throbber',
         ),
-        'type' => 'media_generic',
-        'weight' => '7',
+        'type' => 'file_generic',
+        'weight' => '6',
       ),
     ),
   );
@@ -442,7 +428,7 @@ function asc_workshops_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'inline',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
@@ -529,21 +515,384 @@ function asc_workshops_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'body',
-      'label' => 'Body',
-      'required' => FALSE,
+      'label' => 'Course Resources',
+      'required' => 0,
       'settings' => array(
-        'display_summary' => TRUE,
-        'text_processing' => 1,
+        'display_summary' => 1,
+        'text_processing' => '1',
         'user_register_form' => FALSE,
       ),
       'widget' => array(
+        'active' => 1,
         'module' => 'text',
         'settings' => array(
-          'rows' => 20,
+          'rows' => '20',
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => '-4',
+        'weight' => '6',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-asc_workshop_course-field_asc_workshops_c_number'.
+  $fields['node-asc_workshop_course-field_asc_workshops_c_number'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_asc_workshops_c_number',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(
+        'max_length' => '255',
+      ),
+      'translatable' => '0',
+      'type' => 'text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'asc_workshop_course',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => 'OSU Course Number',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 4,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_asc_workshops_c_number',
+      'label' => 'Course Number',
+      'required' => 1,
+      'settings' => array(
+        'text_processing' => '0',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'size' => '60',
+        ),
+        'type' => 'text_textfield',
+        'weight' => '2',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-asc_workshop_course-field_asc_workshops_course_name'.
+  $fields['node-asc_workshop_course-field_asc_workshops_course_name'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_asc_workshops_course_name',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(
+        'max_length' => '255',
+      ),
+      'translatable' => '0',
+      'type' => 'text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'asc_workshop_course',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => 'OSU course name.',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 5,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_asc_workshops_course_name',
+      'label' => 'Course Name',
+      'required' => 1,
+      'settings' => array(
+        'text_processing' => '0',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'size' => '60',
+        ),
+        'type' => 'text_textfield',
+        'weight' => '3',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-asc_workshop_course-field_asc_workshops_evening'.
+  $fields['node-asc_workshop_course-field_asc_workshops_evening'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_asc_workshops_evening',
+      'foreign keys' => array(
+        'node' => array(
+          'columns' => array(
+            'target_id' => 'nid',
+          ),
+          'table' => 'node',
+        ),
+      ),
+      'indexes' => array(
+        'target_id' => array(
+          0 => 'target_id',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'entityreference',
+      'settings' => array(
+        'handler' => 'base',
+        'handler_settings' => array(
+          'behaviors' => array(
+            'views-select-list' => array(
+              'status' => 0,
+            ),
+          ),
+          'sort' => array(
+            'direction' => 'DESC',
+            'field' => 'field_evening:value',
+            'type' => 'field',
+          ),
+          'target_bundles' => array(
+            'asc_workshops_tutor_room' => 'asc_workshops_tutor_room',
+          ),
+        ),
+        'target_type' => 'node',
+      ),
+      'translatable' => '0',
+      'type' => 'entityreference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'asc_workshop_course',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => 'Select the room for evening tutoring hours.',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'entityreference',
+          'settings' => array(
+            'link' => FALSE,
+          ),
+          'type' => 'entityreference_label',
+          'weight' => 6,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_asc_workshops_evening',
+      'label' => 'Evening Tutor Room',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_select',
+        'weight' => '5',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-asc_workshop_course-field_asc_workshops_handouts'.
+  $fields['node-asc_workshop_course-field_asc_workshops_handouts'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '-1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_asc_workshops_handouts',
+      'foreign keys' => array(
+        'fid' => array(
+          'columns' => array(
+            'fid' => 'fid',
+          ),
+          'table' => 'file_managed',
+        ),
+      ),
+      'indexes' => array(
+        'fid' => array(
+          0 => 'fid',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'file',
+      'settings' => array(
+        'display_default' => 0,
+        'display_field' => 0,
+        'uri_scheme' => 'public',
+      ),
+      'translatable' => '0',
+      'type' => 'file',
+    ),
+    'field_instance' => array(
+      'bundle' => 'asc_workshop_course',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'file',
+          'settings' => array(),
+          'type' => 'file_default',
+          'weight' => 2,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_asc_workshops_handouts',
+      'label' => 'Handouts',
+      'required' => 0,
+      'settings' => array(
+        'description_field' => 1,
+        'file_directory' => '',
+        'file_extensions' => 'pdf',
+        'max_filesize' => '',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'file',
+        'settings' => array(
+          'progress_indicator' => 'throbber',
+        ),
+        'type' => 'file_generic',
+        'weight' => '7',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-asc_workshop_course-field_asc_workshops_subject'.
+  $fields['node-asc_workshop_course-field_asc_workshops_subject'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_asc_workshops_subject',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          'Math' => 'Math',
+          'Stats' => 'Stats',
+        ),
+        'allowed_values_function' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'list_text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'asc_workshop_course',
+      'default_value' => array(
+        0 => array(
+          'value' => 'Math',
+        ),
+      ),
+      'deleted' => '0',
+      'description' => 'OSU Subject Name',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => 3,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_asc_workshops_subject',
+      'label' => 'Subject',
+      'required' => 1,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_select',
+        'weight' => '1',
       ),
     ),
   );
@@ -602,7 +951,7 @@ function asc_workshops_field_default_fields() {
           'module' => 'entityreference',
           'settings' => array(
             'links' => 0,
-            'view_mode' => 'full',
+            'view_mode' => 'teaser',
           ),
           'type' => 'entityreference_entity_view',
           'weight' => '0',
@@ -616,7 +965,7 @@ function asc_workshops_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_room',
-      'label' => 'Current Tutor Room',
+      'label' => 'Daytime Tutor Room',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -626,7 +975,7 @@ function asc_workshops_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '-3',
+        'weight' => '4',
       ),
     ),
   );
@@ -664,17 +1013,17 @@ function asc_workshops_field_default_fields() {
       'bundle' => 'asc_workshops_tutor_room',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'Location of the room on campus.',
+      'description' => 'Building and room number, such as \'SL 1234\'.',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'inline',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 2,
+          'weight' => '0',
         ),
         'teaser' => array(
-          'label' => 'hidden',
+          'label' => 'inline',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
@@ -701,6 +1050,76 @@ function asc_workshops_field_default_fields() {
     ),
   );
 
+  // Exported field: 'node-asc_workshops_tutor_room-field_asc_workshops_gaps'.
+  $fields['node-asc_workshops_tutor_room-field_asc_workshops_gaps'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_asc_workshops_gaps',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => '',
+          1 => 'This room may be closed for 10 minutes in between periods.',
+        ),
+        'allowed_values_function' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'list_boolean',
+    ),
+    'field_instance' => array(
+      'bundle' => 'asc_workshops_tutor_room',
+      'default_value' => array(
+        0 => array(
+          'value' => 0,
+        ),
+      ),
+      'deleted' => '0',
+      'description' => 'Should a disclaimer be included that room may be closed briefly in between courses?',
+      'display' => array(
+        'default' => array(
+          'label' => 'hidden',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => '1',
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => '1',
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_asc_workshops_gaps',
+      'label' => 'Scheduling Gaps',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(
+          'display_label' => 1,
+        ),
+        'type' => 'options_onoff',
+        'weight' => '3',
+      ),
+    ),
+  );
+
   // Exported field: 'node-asc_workshops_tutor_room-field_evening'.
   $fields['node-asc_workshops_tutor_room-field_evening'] = array(
     'field_config' => array(
@@ -720,7 +1139,7 @@ function asc_workshops_field_default_fields() {
       'settings' => array(
         'allowed_values' => array(
           0 => '',
-          1 => '',
+          1 => 'Evening',
         ),
         'allowed_values_function' => '',
       ),
@@ -739,16 +1158,15 @@ function asc_workshops_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'list',
           'settings' => array(),
-          'type' => 'list_default',
-          'weight' => 3,
+          'type' => 'hidden',
+          'weight' => '4',
         ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '2',
+          'weight' => '3',
         ),
       ),
       'entity_type' => 'node',
@@ -762,10 +1180,10 @@ function asc_workshops_field_default_fields() {
         'active' => 1,
         'module' => 'options',
         'settings' => array(
-          'display_label' => 1,
+          'display_label' => 0,
         ),
         'type' => 'options_onoff',
-        'weight' => '3',
+        'weight' => '4',
       ),
     ),
   );
@@ -816,7 +1234,7 @@ function asc_workshops_field_default_fields() {
             'showclosed' => 0,
           ),
           'type' => 'office_hours',
-          'weight' => '0',
+          'weight' => '2',
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -835,7 +1253,7 @@ function asc_workshops_field_default_fields() {
             'showclosed' => 0,
           ),
           'type' => 'office_hours',
-          'weight' => '1',
+          'weight' => '2',
         ),
       ),
       'entity_type' => 'node',
@@ -856,7 +1274,7 @@ function asc_workshops_field_default_fields() {
         'module' => 'office_hours',
         'settings' => array(),
         'type' => 'office_hours',
-        'weight' => '4',
+        'weight' => '5',
       ),
     ),
   );
@@ -899,16 +1317,15 @@ function asc_workshops_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'list',
           'settings' => array(),
-          'type' => 'list_default',
-          'weight' => 1,
+          'type' => 'hidden',
+          'weight' => '5',
         ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '3',
+          'weight' => '4',
         ),
       ),
       'entity_type' => 'node',
@@ -930,18 +1347,30 @@ function asc_workshops_field_default_fields() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Attachments');
   t('Body');
+  t('Building and room number, such as \'SL 1234\'.');
   t('Course');
-  t('Current Tutor Room');
+  t('Course Name');
+  t('Course Number');
+  t('Course Resources');
   t('Date');
+  t('Daytime Tutor Room');
   t('Evening');
+  t('Evening Tutor Room');
+  t('Handouts');
   t('Hours');
   t('Is this a tutor room for evenings?');
   t('Location');
-  t('Location of the room on campus.');
+  t('OSU Course Number');
+  t('OSU Subject Name');
+  t('OSU course name.');
+  t('Scheduling Gaps');
+  t('Select the room for evening tutoring hours.');
+  t('Should a disclaimer be included that room may be closed briefly in between courses?');
+  t('Subject');
   t('Term');
   t('Workshop Title');
+  t('Workshop title; do not include course name. ');
 
   return $fields;
 }

@@ -56,10 +56,17 @@ function asc_workshops_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '6',
+          'weight' => '7',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'signup' => array(
+          'default' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__asc_workshop'] = $strongarm;
@@ -85,6 +92,24 @@ function asc_workshops_strongarm() {
       'search_result' => array(
         'custom_settings' => FALSE,
       ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+      'front_rotor_short' => array(
+        'custom_settings' => FALSE,
+      ),
+      'front_rotor_tall' => array(
+        'custom_settings' => FALSE,
+      ),
+      'front_text' => array(
+        'custom_settings' => FALSE,
+      ),
+      'front_quick_text' => array(
+        'custom_settings' => FALSE,
+      ),
+      'revision' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -92,10 +117,21 @@ function asc_workshops_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '5',
+          'weight' => '6',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'signup' => array(
+          'default' => array(
+            'weight' => '3',
+            'visible' => FALSE,
+          ),
+          'teaser' => array(
+            'weight' => '5',
+            'visible' => FALSE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__asc_workshops_tutor_room'] = $strongarm;
@@ -143,10 +179,20 @@ function asc_workshops_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'title' => array(
-          'weight' => '-5',
+          'weight' => '0',
+        ),
+        'path' => array(
+          'weight' => '8',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'signup' => array(
+          'default' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__asc_workshop_course'] = $strongarm;
