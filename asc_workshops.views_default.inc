@@ -273,7 +273,7 @@ function asc_workshops_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['grouping'] = array(
     0 => array(
-      'field' => 'field_asc_workshop_title',
+      'field' => 'field_asc_workshop_worksho_title',
       'rendered' => 0,
       'rendered_strip' => 0,
     ),
@@ -292,12 +292,12 @@ function asc_workshops_views_default_views() {
   $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['path']['absolute'] = TRUE;
   /* Field: Content: Workshop Title */
-  $handler->display->display_options['fields']['field_asc_workshop_title']['id'] = 'field_asc_workshop_title';
-  $handler->display->display_options['fields']['field_asc_workshop_title']['table'] = 'field_data_field_asc_workshop_title';
-  $handler->display->display_options['fields']['field_asc_workshop_title']['field'] = 'field_asc_workshop_title';
-  $handler->display->display_options['fields']['field_asc_workshop_title']['label'] = '';
-  $handler->display->display_options['fields']['field_asc_workshop_title']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_asc_workshop_title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_asc_workshop_worksho_title']['id'] = 'field_asc_workshop_worksho_title';
+  $handler->display->display_options['fields']['field_asc_workshop_worksho_title']['table'] = 'field_data_field_asc_workshop_worksho_title';
+  $handler->display->display_options['fields']['field_asc_workshop_worksho_title']['field'] = 'field_asc_workshop_worksho_title';
+  $handler->display->display_options['fields']['field_asc_workshop_worksho_title']['label'] = '';
+  $handler->display->display_options['fields']['field_asc_workshop_worksho_title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_asc_workshop_worksho_title']['element_label_colon'] = FALSE;
   /* Field: Content: Location */
   $handler->display->display_options['fields']['field_location']['id'] = 'field_location';
   $handler->display->display_options['fields']['field_location']['table'] = 'field_data_field_location';

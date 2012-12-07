@@ -167,14 +167,14 @@ function asc_workshops_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-asc_workshop-field_asc_workshop_title'.
-  $fields['node-asc_workshop-field_asc_workshop_title'] = array(
+  // Exported field: 'node-asc_workshop-field_asc_workshop_worksho_title'.
+  $fields['node-asc_workshop-field_asc_workshop_worksho_title'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_asc_workshop_title',
+      'field_name' => 'field_asc_workshop_worksho_title',
       'foreign keys' => array(
         'format' => array(
           'columns' => array(
@@ -217,7 +217,7 @@ function asc_workshops_field_default_fields() {
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_asc_workshop_title',
+      'field_name' => 'field_asc_workshop_worksho_title',
       'label' => 'Workshop Title',
       'required' => 1,
       'settings' => array(
