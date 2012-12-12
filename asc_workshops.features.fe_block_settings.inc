@@ -36,7 +36,7 @@ function asc_workshops_default_fe_block_settings() {
     'theme' => 'q7',
     'status' => '1',
     'weight' => '-21',
-    'region' => 'preface_first',
+    'region' => 'preface_second',
     'custom' => '0',
     'visibility' => '1',
     'pages' => '<front>',

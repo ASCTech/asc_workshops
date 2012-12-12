@@ -13,6 +13,69 @@ function asc_workshops_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'ant_asc_workshop';
+  $strongarm->value = '1';
+  $export['ant_asc_workshop'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ant_asc_workshops_tutor_room';
+  $strongarm->value = '1';
+  $export['ant_asc_workshops_tutor_room'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ant_asc_workshop_course';
+  $strongarm->value = '1';
+  $export['ant_asc_workshop_course'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ant_pattern_asc_workshop';
+  $strongarm->value = '[node:field_asc_workshop_course] [node:field_asc_workshop_worksho_title]';
+  $export['ant_pattern_asc_workshop'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ant_pattern_asc_workshops_tutor_room';
+  $strongarm->value = '[node:field_location] - [node:field_term]';
+  $export['ant_pattern_asc_workshops_tutor_room'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ant_pattern_asc_workshop_course';
+  $strongarm->value = '[node:field_asc_workshops_subject] [node:field_asc_workshops_c_number]: [node:field_asc_workshops_c_number]';
+  $export['ant_pattern_asc_workshop_course'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ant_php_asc_workshop';
+  $strongarm->value = 0;
+  $export['ant_php_asc_workshop'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ant_php_asc_workshops_tutor_room';
+  $strongarm->value = 0;
+  $export['ant_php_asc_workshops_tutor_room'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ant_php_asc_workshop_course';
+  $strongarm->value = 0;
+  $export['ant_php_asc_workshop_course'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__asc_workshop';
   $strongarm->value = array(
     'view_modes' => array(
