@@ -42,7 +42,7 @@ function asc_workshops_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'ant_pattern_asc_workshops_tutor_room';
-  $strongarm->value = '[node:field_location] - [node:field_term]';
+  $strongarm->value = '[node:field_asc_workshop_location] - [node:field_term]';
   $export['ant_pattern_asc_workshops_tutor_room'] = $strongarm;
 
   $strongarm = new stdClass();
