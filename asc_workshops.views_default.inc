@@ -172,7 +172,7 @@ function asc_workshops_views_default_views() {
   $handler->display->display_options['fields']['field_date']['alter']['absolute'] = TRUE;
   $handler->display->display_options['fields']['field_date']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_date']['settings'] = array(
-    'format_type' => 'medium',
+    'format_type' => 'workshops',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',

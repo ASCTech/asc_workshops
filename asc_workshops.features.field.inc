@@ -50,7 +50,7 @@ function asc_workshops_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '0',
+          'weight' => '2',
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -141,7 +141,7 @@ function asc_workshops_field_default_fields() {
             'link' => 1,
           ),
           'type' => 'entityreference_label',
-          'weight' => '6',
+          'weight' => '4',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -204,10 +204,9 @@ function asc_workshops_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'text',
           'settings' => array(),
-          'type' => 'text_default',
-          'weight' => '8',
+          'type' => 'hidden',
+          'weight' => '6',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -277,7 +276,7 @@ function asc_workshops_field_default_fields() {
           'module' => 'file',
           'settings' => array(),
           'type' => 'file_default',
-          'weight' => 9,
+          'weight' => '3',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -345,17 +344,17 @@ function asc_workshops_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'date',
           'settings' => array(
-            'format_type' => 'long',
+            'format_type' => 'workshops',
             'fromto' => 'both',
             'multiple_from' => '',
             'multiple_number' => '',
             'multiple_to' => '',
           ),
           'type' => 'date_default',
-          'weight' => '2',
+          'weight' => '0',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -432,7 +431,7 @@ function asc_workshops_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '3',
+          'weight' => '1',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -501,7 +500,7 @@ function asc_workshops_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '1',
+          'weight' => '2',
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -572,10 +571,9 @@ function asc_workshops_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'text',
           'settings' => array(),
-          'type' => 'text_default',
-          'weight' => 4,
+          'type' => 'hidden',
+          'weight' => '9',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -641,10 +639,9 @@ function asc_workshops_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'text',
           'settings' => array(),
-          'type' => 'text_default',
-          'weight' => 5,
+          'type' => 'hidden',
+          'weight' => '10',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -728,10 +725,11 @@ function asc_workshops_field_default_fields() {
           'label' => 'above',
           'module' => 'entityreference',
           'settings' => array(
-            'link' => FALSE,
+            'links' => 0,
+            'view_mode' => 'teaser',
           ),
-          'type' => 'entityreference_label',
-          'weight' => 6,
+          'type' => 'entityreference_entity_view',
+          'weight' => '1',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -798,7 +796,7 @@ function asc_workshops_field_default_fields() {
           'module' => 'file',
           'settings' => array(),
           'type' => 'file_default',
-          'weight' => 2,
+          'weight' => '3',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -868,10 +866,9 @@ function asc_workshops_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'list',
           'settings' => array(),
-          'type' => 'list_default',
-          'weight' => 3,
+          'type' => 'hidden',
+          'weight' => '7',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -893,6 +890,75 @@ function asc_workshops_field_default_fields() {
         'settings' => array(),
         'type' => 'options_select',
         'weight' => '1',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-asc_workshop_course-field_reviews'.
+  $fields['node-asc_workshop_course-field_reviews'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_reviews',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => '',
+          1 => '',
+        ),
+        'allowed_values_function' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'list_boolean',
+    ),
+    'field_instance' => array(
+      'bundle' => 'asc_workshop_course',
+      'default_value' => array(
+        0 => array(
+          'value' => 0,
+        ),
+      ),
+      'deleted' => '0',
+      'description' => 'Does MSLC offer reviews for this course?',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => '4',
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_reviews',
+      'label' => 'Reviews',
+      'required' => 1,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(
+          'display_label' => 0,
+        ),
+        'type' => 'options_onoff',
+        'weight' => '11',
       ),
     ),
   );
@@ -976,6 +1042,144 @@ function asc_workshops_field_default_fields() {
         'settings' => array(),
         'type' => 'options_select',
         'weight' => '4',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-asc_workshop_course-field_tutoring'.
+  $fields['node-asc_workshop_course-field_tutoring'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_tutoring',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => '',
+          1 => '',
+        ),
+        'allowed_values_function' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'list_boolean',
+    ),
+    'field_instance' => array(
+      'bundle' => 'asc_workshop_course',
+      'default_value' => array(
+        0 => array(
+          'value' => 0,
+        ),
+      ),
+      'deleted' => '0',
+      'description' => 'Does MSLC offer tutoring for this course?',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => '5',
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_tutoring',
+      'label' => 'Tutoring',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(
+          'display_label' => 1,
+        ),
+        'type' => 'options_onoff',
+        'weight' => '9',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-asc_workshop_course-field_workshops'.
+  $fields['node-asc_workshop_course-field_workshops'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_workshops',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => '',
+          1 => '',
+        ),
+        'allowed_values_function' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'list_boolean',
+    ),
+    'field_instance' => array(
+      'bundle' => 'asc_workshop_course',
+      'default_value' => array(
+        0 => array(
+          'value' => 0,
+        ),
+      ),
+      'deleted' => '0',
+      'description' => 'Does MSLC offer workshops for this course?',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => '6',
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_workshops',
+      'label' => 'Workshops',
+      'required' => 1,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(
+          'display_label' => 0,
+        ),
+        'type' => 'options_onoff',
+        'weight' => '10',
       ),
     ),
   );
@@ -1094,7 +1298,7 @@ function asc_workshops_field_default_fields() {
           'weight' => '1',
         ),
         'teaser' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
@@ -1355,6 +1559,9 @@ function asc_workshops_field_default_fields() {
   t('Course Resources');
   t('Date');
   t('Daytime Tutor Room');
+  t('Does MSLC offer reviews for this course?');
+  t('Does MSLC offer tutoring for this course?');
+  t('Does MSLC offer workshops for this course?');
   t('Evening');
   t('Evening Tutor Room');
   t('Handouts');
@@ -1364,13 +1571,16 @@ function asc_workshops_field_default_fields() {
   t('OSU Course Number');
   t('OSU Subject Name');
   t('OSU course name.');
+  t('Reviews');
   t('Scheduling Gaps');
   t('Select the room for evening tutoring hours.');
   t('Should a disclaimer be included that room may be closed briefly in between courses?');
   t('Subject');
   t('Term');
+  t('Tutoring');
   t('Workshop Title');
   t('Workshop title; do not include course name. ');
+  t('Workshops');
 
   return $fields;
 }
